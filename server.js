@@ -24,6 +24,20 @@ app.use(express.static('website'));
 
 
 // Setup Server
-const server = app.listen(PORT, () => {
+app.listen(PORT, () => {
     console.log(`listening on port ${PORT}`);
+});
+
+app.get('/getProjectData', (req, res) => {
+    res.send(projectData);
+});
+
+app.post('/saveProjectData', (req, res) => {
+    const { temperature, date, userResponse } = req.body;
+    projectData.push({
+        temperature,
+        date,
+        userResponse
+    });
+    res.send(`Data has been successfully added`);
 });
