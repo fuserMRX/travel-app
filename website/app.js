@@ -89,7 +89,7 @@ const updateWeatherJournalApp = async () => {
             const { feelings: userResponse } = getUserInputInfo();
             // Create a new date instance dynamically with JS
             let date = new Date();
-            date = `${date.getMonth()}.${date.getDate()}.${date.getFullYear()}`;
+            date = `${(date.getMonth() + 1)}/${date.getDate()}/${date.getFullYear()}`;
             saveProjectData('http://localhost:3000/saveProjectData', { temperature, date, userResponse })
                 .then(() => {
                     getProjectData('http://localhost:3000/getProjectData');
