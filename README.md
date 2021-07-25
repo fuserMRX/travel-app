@@ -1,10 +1,10 @@
+
 # Weather-Journal App Project
 
-## Overview
-This project requires you to create an asynchronous web app that uses Web API and user data to dynamically update the UI. 
+## Simple HTML, CSS, JS Weather-Journal App Project
 
-## Instructions
-This will require modifying the `server.js` file and the `website/app.js` file. You can see `index.html` for element references, and once you are finished with the project steps, you can use `style.css` to style your application to customized perfection.
+![waether-journal-app](https://img.shields.io/badge/Weather--Journal--App-build--1.0.0-green)
 
-## Extras
-If you are interested in testing your code as you go, you can use `tests.js` as a template for writing and running some basic tests for your code.
+## Available Scripts
+
+To install the project please clone the repo and use [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension or your prefered one in order to launch server for simple html or css.

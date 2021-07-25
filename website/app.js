@@ -1,5 +1,6 @@
 // Open Weather API example
 // api.openweathermap.org/data/2.5/weather?zip={zip code},{country code}&appid={API key}
+// https://openweathermap.org/current
 
 /* Global Variables */
 // OpenWeather API key
@@ -23,7 +24,7 @@ const getWeatherInfo = async () => {
     const defaultZip = '85001';
     const { zip } = getUserInputInfo();
     const requestZIP = zip || defaultZip;
-    const requestUrl = `${BaseUrl}${requestZIP}&appid=${APIKey}`;
+    const requestUrl = `${BaseUrl}${requestZIP}&units=metric&appid=${APIKey}`;
     const response = await fetch(requestUrl);
     try {
         const responseData = await response.json();
@@ -69,13 +70,13 @@ const getProjectData = async (url) => {
 
 const updateUI = (dataUI) => {
     const { temperature, date, userResponse } = dataUI;
-    dateUI.innerHTML = date || '';
-    temperatureUI.innerHTML = temperature || '';
-    contentUI.innerHTML = userResponse || '';
+    dateUI.innerHTML = `Date is ${date}` || '';
+    temperatureUI.innerHTML = `Temperature is ${temperature} &#8451` || '';
+    contentUI.innerHTML = userResponse ? `Users mood is => ${userResponse}` : '';
 
     // Clear input fields
     zip.value = '';
-    feelings.value='';
+    feelings.value = '';
 };
 
 
