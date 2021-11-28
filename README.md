@@ -1,5 +1,5 @@
 
-# Weather-Journal App Project
+# Travel-App App Project
 
 ## Simple HTML, CSS, JS Weather-Journal App Project
 

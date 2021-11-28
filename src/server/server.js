@@ -1,11 +1,19 @@
+// eslint-disable-next-line no-unused-vars
+const path = require('path');
+const express = require('express');
+const cors = require('cors');
+const dotenv = require('dotenv');
+dotenv.config();
+
 const PORT = 3000;
 
 // Setup empty JS object to act as endpoint for all routes
 let projectData = {};
+const textapi = {
+    // TODO - other keys shuld be there
+    application_key: process.env.API_KEY,
+};
 
-// Require Express to run server and routes
-const express = require('express');
-const cors = require('cors');
 
 // Start up an instance of app
 const app = express();
@@ -20,7 +28,7 @@ app.use(express.json());
 app.use(cors());
 
 // Initialize the main project folder
-app.use(express.static('website'));
+app.use(express.static('dist'));
 
 
 // Setup Server
