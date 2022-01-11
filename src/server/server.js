@@ -7,11 +7,13 @@ dotenv.config();
 
 const PORT = 3000;
 
-// Setup empty JS object to act as endpoint for all routes
-let projectData = {};
-const textapi = {
-    // TODO - other keys shuld be there
-    application_key: process.env.API_KEY,
+const geoNamesData = {};
+const weatherbitData = {};
+const pixabayData = {};
+
+const API_KEYS = {
+    weatherbit_api_key: process.env.WEATHERBIT_API_KEY,
+    pixabay_api_key: process.env.PIXABAY_API_KEY,
 };
 
 
@@ -36,16 +38,48 @@ app.listen(PORT, () => {
     console.log(`listening on port ${PORT}`);
 });
 
-app.get('/getProjectData', (req, res) => {
-    res.send(projectData);
+app.get('/weatherbitKey', function (req, res) {
+    res.send(API_KEYS.weatherbit_api_key);
 });
 
-app.post('/saveProjectData', (req, res) => {
+app.get('/pixabayKey', function (req, res) {
+    res.send(API_KEYS.pixabay_api_key);
+});
+
+app.get('/getGeoNamesData', (req, res) => {
+    res.send(geoNamesData);
+});
+app.get('/getWeatherbitData', (req, res) => {
+    res.send(weatherbitData);
+});
+app.get('/getPixabayData', (req, res) => {
+    res.send(pixabayData);
+});
+
+app.post('/saveGeoNamesData', (req, res) => {
     const { temperature, date, userResponse } = req.body;
-    projectData = {
-        temperature,
-        date,
-        userResponse
-    };
-    res.send('Data has been successfully added');
+    // projectData = {
+    //     temperature,
+    //     date,
+    //     userResponse
+    // };
+    res.send('GeoNamesData has been successfully added');
+});
+app.post('/saveWeatherbitData', (req, res) => {
+    const { temperature, date, userResponse } = req.body;
+    // projectData = {
+    //     temperature,
+    //     date,
+    //     userResponse
+    // };
+    res.send('WeatherbitData has been successfully added');
+});
+app.post('/savePixabayData', (req, res) => {
+    const { temperature, date, userResponse } = req.body;
+    // projectData = {
+    //     temperature,
+    //     date,
+    //     userResponse
+    // };
+    res.send('PixabayData has been successfully added');
 });

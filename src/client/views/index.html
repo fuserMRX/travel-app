@@ -1,38 +1,298 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Weather Journal</title>
-  <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Travel Planner Web Site" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Orelega+One&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Metal&display=swap">
+    <title>Travel Planner</title>
+    <script src="https://kit.fontawesome.com/8fe968a131.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <div id="app">
-    <div class="holder headline">
-      Weather Journal App
-    </div>
-    <div class="holder zip">
-      <label for="zip">Enter Zipcode here</label>
-      <input type="text" id="zip" placeholder="enter zip code here">
-    </div>
-    <div class="holder feel">
-      <label for="feelings">How are you feeling today?</label>
-      <textarea class="myInput" id="feelings" placeholder="Enter your feelings here" rows="9" cols="50"></textarea>
-      <button id="generate" type="submit"> Generate </button>
-    </div>
-    <div class="holder entry">
-      <div class="title">Most Recent Entry</div>
-      <div id="entryHolder">
-        <div id="date"></div>
-        <div id="temp"></div>
-        <div id="content"></div>
-      </div>
-    </div>
-  </div>
-  <script src="app.js" type="text/javascript"></script>
+    <div class="post-container">
+        <div class="post-card-header">
+            <i class="far fa-user-circle fa-lg"></i>
+            <div class="post-card-header-logo">
+                <img src="/src/assets/images/siteLogo.webp" alt="imageLogo" />
+                <h1><a href="#" title="Main Logo">Metal Travel Bug</a></h1>
+                <img src="/src/assets/images/siteLogo.webp" alt="imageLogo" />
+            </div>
+            <nav class="post-card-header-navigation">
+                <p><a class="subscribe" href="#" title="Subscribe">Subscribe</a></p>
+                <p>Gear</p>
+                <p>Camping</p>
+                <p>Road</p>
+                <p>Tickets Info</p>
+                <form action="/search" method="POST" class="form"
+                    onsubmit="event.preventDefault(); event.target.reset();">
+                    <input type="search" placeholder="Search" class="search-field" />
+                    <button type="submit" class="search-button">
+                        <img src="/src/assets/images/magniGlass.webp">
+                    </button>
+                </form>
+            </nav>
+        </div>
 
+        <main class="post-card-main">
+            <h2 class="category-header">Camping</h2>
+            <div class="post-card-nestedGrid">
+                <section class="post-card-container-section">
+                    <div class="post-card-container">
+                        <p class="post-card-badge">
+                            <i class="fas fa-ellipsis-v fa-lg"></i>
+                        </p>
+                        <h3>
+                            <a href="https://www.wacken.com/en/" target="_blank" rel="noopener noreferrer">
+                                <i class="far fa-hand-point-right"></i></i> <b>Wacken Open Air</b>
+                            </a>
+                            (<i>Germany</i>)
+                        </h3>
+                        <p><i>July 31, 2021</i>
+                        </p>
+                        <figure>
+                            <img src="/src/assets/images/wacken_fest.webp" alt="Wacken Camping">
+                            <figcaption>Wacken Fest Camping</figcaption>
+                        </figure>
+                        <div class="post-card-link-section">
+                            <a href="/src/htmlComponents/postcard.html">
+                                <i class="fas fa-link"></i>
+                                Continue Reading
+                                <i class="fas fa-link"></i>
+                            </a>
+                            <div class="post-quote">
+                                <p><i class="fas fa-arrow-circle-up"></i></p>
+                                <q>click on the link above to find out more about this festival camping</q>
+                            </div>
+                        </div>
+                        <div class="post-card-social-icons">
+                            <i class="fas fa-share-alt fa-lg"></i>
+                            <i class="far fa-heart fa-lg"></i>
+                            <i class="fas fa-chevron-down fa-lg"></i>
+                        </div>
+                    </div>
+                </section>
+                <section class="post-card-container-section">
+                    <div class="post-card-container">
+                        <p class="post-card-badge">
+                            <i class="fas fa-ellipsis-v fa-lg"></i>
+                        </p>
+                        <h3>
+                            <a href="https://downloadfestival.co.uk/" target="_blank" rel="noopener noreferrer">
+                                <i class="far fa-hand-point-right"></i></i> <b>Download Rock Fest</b>
+                            </a>
+                            (<i>England</i>)
+                        </h3>
+                        <p><i>June 12, 2022</i></p>
+                        <figure>
+                            <img src="/src/assets/images/download_fest.webp" alt="Download Camping">
+                            <figcaption>Download Fest Camping</figcaption>
+                        </figure>
+                        <div class="post-card-link-section">
+                            <a href="/src/htmlComponents/postcard.html">
+                                <i class="fas fa-link"></i>
+                                Continue Reading
+                                <i class="fas fa-link"></i>
+                            </a>
+                            <div class="post-quote">
+                                <p><i class="fas fa-arrow-circle-up"></i></p>
+                                <q>click on the link above to find out more about this festival camping</q>
+                            </div>
+                        </div>
+                        <div class="post-card-social-icons">
+                            <i class="fas fa-share-alt fa-lg"></i>
+                            <i class="far fa-heart fa-lg"></i>
+                            <i class="fas fa-chevron-down fa-lg"></i>
+                        </div>
+                    </div>
+                </section>
+                <section class="post-card-container-section">
+                    <div class="post-card-container">
+                        <p class="post-card-badge">
+                            <i class="fas fa-ellipsis-v fa-lg"></i>
+                        </p>
+                        <h3>
+                            <a href="https://www.hellfest.fr/" target="_blank" rel="noopener noreferrer">
+                                <i class="far fa-hand-point-right"></i></i> <b>HellFest Open Air</b>
+                            </a>
+                            (<i>France</i>)
+                        </h3>
+                        <p><i>June 19, 2022</i></p>
+                        <figure>
+                            <img src="/src/assets/images/hellfest_fest.webp" alt="HellFest Camping">
+                            <figcaption>HellFest Camping</figcaption>
+                        </figure>
+                        <div class="post-card-link-section">
+                            <a href="/src/htmlComponents/postcard.html">
+                                <i class="fas fa-link"></i>
+                                Continue Reading
+                                <i class="fas fa-link"></i>
+                            </a>
+                            <div class="post-quote">
+                                <p><i class="fas fa-arrow-circle-up"></i></p>
+                                <q>click on the link above to find out more about this festival camping</q>
+                            </div>
+                        </div>
+                        <div class="post-card-social-icons">
+                            <i class="fas fa-share-alt fa-lg"></i>
+                            <i class="far fa-heart fa-lg"></i>
+                            <i class="fas fa-chevron-down fa-lg"></i>
+                        </div>
+                    </div>
+                </section>
+                <section class="post-card-container-section">
+                    <div class="post-card-container">
+                        <p class="post-card-badge">
+                            <i class="fas fa-ellipsis-v fa-lg"></i>
+                        </p>
+                        <h3>
+                            <a href="https://zaxidfest.com/" target="_blank" rel="noopener noreferrer">
+                                <i class="far fa-hand-point-right"></i></i> <b>ZaxidFest Open Air</b>
+                            </a>
+                            (<i>Ukraine</i>)
+                        </h3>
+                        <p><i>June 28, 2022</i></p>
+                        <figure>
+                            <img src="/src/assets/images/zaxidfest_fest.webp" alt="ZaxidFest Camping">
+                            <figcaption>ZaxidFest Camping</figcaption>
+                        </figure>
+                        <div class="post-card-link-section">
+                            <a href="/src/htmlComponents/postcard.html">
+                                <i class="fas fa-link"></i>
+                                Continue Reading
+                                <i class="fas fa-link"></i>
+                            </a>
+                            <div class="post-quote">
+                                <p><i class="fas fa-arrow-circle-up"></i></p>
+                                <q>click on the link above to find out more about this festival camping</q>
+                            </div>
+                        </div>
+                        <div class="post-card-social-icons">
+                            <i class="fas fa-share-alt fa-lg"></i>
+                            <i class="far fa-heart fa-lg"></i>
+                            <i class="fas fa-chevron-down fa-lg"></i>
+                        </div>
+                    </div>
+                </section>
+                <section class="post-card-container-section">
+                    <div class="post-card-container">
+                        <p class="post-card-badge">
+                            <i class="fas fa-ellipsis-v fa-lg"></i>
+                        </p>
+                        <h3>
+                            <a href="https://www.graspop.be/en/" target="_blank" rel="noopener noreferrer">
+                                <i class="far fa-hand-point-right"></i></i> <b>Graspop Open Air</b>
+                            </a>
+                            (<i>Belgium</i>)
+                        </h3>
+                        <p><i>June 16, 2022</i></p>
+                        <figure>
+                            <img src="/src/assets/images/graspop_fest.webp" alt="Graspop Camping">
+                            <figcaption>Graspop Camping</figcaption>
+                        </figure>
+                        <div class="post-card-link-section">
+                            <a href="/src/htmlComponents/postcard.html">
+                                <i class="fas fa-link"></i>
+                                Continue Reading
+                                <i class="fas fa-link"></i>
+                            </a>
+                            <div class="post-quote">
+                                <p><i class="fas fa-arrow-circle-up"></i></p>
+                                <q>click on the link above to find out more about this festival camping</q>
+                            </div>
+                        </div>
+                        <div class="post-card-social-icons">
+                            <i class="fas fa-share-alt fa-lg"></i>
+                            <i class="far fa-heart fa-lg"></i>
+                            <i class="fas fa-chevron-down fa-lg"></i>
+                        </div>
+                    </div>
+                </section>
+                <section class="post-card-container-section">
+                    <div class="post-card-container">
+                        <p class="post-card-badge">
+                            <i class="fas fa-ellipsis-v fa-lg"></i>
+                        </p>
+                        <h3>
+                            <a href="https://www.resurrectionfest.es/?lang=en" target="_blank" rel="noopener noreferrer">
+                                <i class="far fa-hand-point-right"></i></i> <b>Resurrection Fest</b>
+                            </a>
+                            (<i>Spain</i>)
+                        </h3>
+                        <p><i>July 2, 2022</i></p>
+                        <figure>
+                            <img src="/src/assets/images/resurrection_fest.webp" alt="Resurrection Camping">
+                            <figcaption>Resurrection Camping</figcaption>
+                        </figure>
+                        <div class="post-card-link-section">
+                            <a href="/src/htmlComponents/postcard.html">
+                                <i class="fas fa-link"></i>
+                                Continue Reading
+                                <i class="fas fa-link"></i>
+                            </a>
+                            <div class="post-quote">
+                                <p><i class="fas fa-arrow-circle-up"></i></p>
+                                <q>click on the link above to find out more about this festival camping</q>
+                            </div>
+                        </div>
+                        <div class="post-card-social-icons">
+                            <i class="fas fa-share-alt fa-lg"></i>
+                            <i class="far fa-heart fa-lg"></i>
+                            <i class="fas fa-chevron-down fa-lg"></i>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <section class="load-more-button-section">
+                <div class="load-more-button" data-js-load-more>
+                    <button><i class="fas fa-spinner fa-spin"></i> Load More</button>
+                </div>
+            </section>
+        </main>
+
+        <footer class="post-card-footer">
+            <div class="about">
+                <i class="fas fa-hiking fa-lg"></i>
+                <p>Site about traveling and visiting <br/>
+                    metal/ethnic/rock festivals
+                </p>
+            </div>
+            <hr />
+            <div class="menu">
+                <a href="#/">
+                    <i class="fas fa-file-signature fa-lg"></i> <b>Subscribe</b>
+                </a>
+                <a href="#/">
+                    <i class="fas fa-tshirt fa-lg"></i> Gear
+                </a>
+                <a href="#/">
+                    <i class="fas fa-campground fa-lg"></i> Camping
+                </a>
+                <a href="#/">
+                    <i class="fas fa-road fa-lg"></i> Road
+                </a>
+                <a href="#/">
+                    <i class="fas fa-ticket-alt fa-lg"></i> Tickets Info
+                </a>
+            </div>
+            <hr />
+            <div class="footer-social-section">
+                <p>Social Contacts</p>
+                <i class="fab fa-instagram fa-lg"></i>
+                <i class="fab fa-facebook-square fa-lg"></i>
+                <i class="fab fa-twitter fa-lg"></i>
+            </div>
+            <hr />
+            <div class="label">
+                <p>
+                    <i class="far fa-copyright"></i>Metal Travel Bug Corp 2021
+                </p>
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>

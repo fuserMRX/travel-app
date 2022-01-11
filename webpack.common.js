@@ -28,6 +28,9 @@ module.exports = {
             files: 'src/**/*.js',
         }),
         new HtmlWebpackPlugin({
+            // Chrome does not see simple favicon.ico on the localhost - firefox is doing great with it :(
+            // solution - just to change name instead of general 'favicon.ico'
+            favicon: './src/assets/travel_app_favicon.ico',
             template: './src/client/views/index.html',
             filename: './index.html',
         }),

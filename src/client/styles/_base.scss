@@ -1,0 +1,68 @@
+body {
+    background-color: #fbf9f4;
+    font-family: Helvetica, Arial, Sans-Serif;
+    font-size: medium;
+}
+
+.post-container {
+    display: grid;
+    width: 100%;
+    margin: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 1fr 0.1fr;
+    grid-template-areas:
+        "hd"
+        "main"
+        "ft";
+}
+
+.post-card-header {
+    grid-area: hd;
+    place-self: center;
+    text-align: center;
+}
+
+.post-card-footer {
+    grid-area: ft;
+}
+
+.post-card-main {
+    grid-area: main;
+    margin: auto;
+    text-align: center;
+}
+
+.post-card-main .category-header {
+    font-family: 'Metal Mania', cursive, sans-serif;
+    font-size: 2vw;
+    margin: 2%;
+}
+
+.post-card-nestedGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    grid-gap: 5em;
+    text-align: center;
+}
+
+@media(min-width:900px) {
+    .post-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 0.1fr 1fr 0.1fr;
+        grid-template-areas:
+            "hd hd hd hd hd hd hd hd"
+            "main main main main main main main main"
+            "ft ft ft ft ft ft ft ft";
+        text-align: center;
+    }
+
+    .post-card-nestedGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+        grid-gap: 5em;
+        text-align: center;
+    }
+}

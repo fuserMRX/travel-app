@@ -6,6 +6,11 @@
 // OpenWeather API key
 const APIKey = '830acfcd949b7f3dbfcaa08c4baccb1d';
 const BaseUrl = 'https://api.openweathermap.org/data/2.5/weather?zip=';
+
+// With the parameter 'fuzzy' the GeoNames search will find results even if the search terms are incorrectly spelled
+const GeoNamesBaseUrl1 = `http://api.geonames.org/searchJSON?q=`;
+const GeoNamesBaseUrl2 = `&fuzzy=0.8&maxRows=1&username=vortex84`;
+
 const submitButton = document.querySelector('#generate');
 const zip = document.querySelector('#zip');
 const feelings = document.querySelector('#feelings');
