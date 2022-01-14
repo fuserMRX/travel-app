@@ -1,0 +1,143 @@
+.post-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90vw;
+    box-shadow: 0 4px 8px 0 rgb(248, 182, 106);
+    transition: 0.5s;
+    background-color: rgb(255, 255, 255);
+    font-family: 'Metal', cursive, sans-serif;
+}
+
+@media(min-width:900px) {
+    .post-card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 25vw;
+        box-shadow: 0 4px 8px 0 rgb(248, 182, 106);
+        transition: 0.5s;
+        background-color: rgb(255, 255, 255);
+        font-family: 'Metal', cursive, sans-serif;
+    }
+}
+
+.post-card-container * {
+    margin: 0;
+    padding: 0;
+}
+
+.post-card-container:hover {
+    box-shadow: 0 15px 20px 0 rgb(248, 182, 106);
+}
+
+.post-card-container figure {
+    border: thin #c0c0c0 solid;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    overflow: hidden;
+    width: 90%;
+    margin: 2%;
+}
+
+.post-card-container figure img {
+    max-width: 100%;
+    max-height: 100%;
+    transform-origin: 50% 65%;
+    transition: transform 2s ease-in-out;
+}
+
+.post-card-container figure img:hover {
+    transform: scale(2);
+}
+
+.post-card-container figure figcaption {
+    background-color: #222;
+    color: #fff;
+    font: italic smaller sans-serif;
+    padding: 3px;
+    text-align: center;
+}
+
+.post-card-container i {
+    transition: transform .5s ease;
+}
+
+.post-card-container i:hover {
+    transform: scale(1.5);
+    color: rgb(224, 135, 2);
+}
+
+.post-card-container .post-card-badge {
+    align-self: flex-end;
+    margin: 1.5%;
+    cursor: pointer;
+}
+
+.post-card-container q {
+    quotes: auto;
+}
+
+.post-card-container a {
+    text-decoration: none;
+    color: black;
+}
+
+.post-card-container a:hover {
+    color: rgb(207, 126, 3);
+    text-decoration: underline;
+}
+
+.post-card-link-section {
+    position: relative;
+}
+
+.post-quote {
+    visibility: hidden;
+    width: 240px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -120px;
+    line-height: 1em;
+}
+
+.post-quote::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+}
+
+.post-card-container a:hover+.post-quote {
+    visibility: visible;
+}
+
+.post-card-social-icons {
+    display: flex;
+    flex-direction: row;
+    /* solution to override one flex inside another */
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.post-card-social-icons i {
+    cursor: pointer;
+    padding: 15px;
+}
+
+.post-card-social-icons .fa-chevron-down {
+    margin-left: auto;
+}

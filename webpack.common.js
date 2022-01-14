@@ -19,8 +19,18 @@ module.exports = {
         library: {
             name: 'Client',
             type: 'umd',
-        }
+        },
+        // publicPath: '/src/assets/',
         // libraryTarget is not relevant any more - output.library.type is enough
+        // assetModuleFilename: './src/assets/images/[name].[ext]',
+    },
+    module: {
+        rules: [
+            {
+                test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
+                type: 'asset/resource',
+            },
+        ]
     },
     plugins: [
         // enables to check eslint errors during the build

@@ -9,8 +9,9 @@ module.exports = merge(common, {
     devServer: {
         static: {
             // ability to serve static files - img, videos, bundled file
-            directory: path.join(__dirname, './dist'),
+            directory: path.join(__dirname, '/'),
         },
+        host: '127.0.0.1',
         client: {
             progress: true,
         },
