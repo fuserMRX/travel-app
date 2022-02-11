@@ -5,21 +5,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Travel Planner Web Site" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Orelega+One&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Metal&display=swap">
     <title>Travel Planner</title>
-    <script src="https://kit.fontawesome.com/8fe968a131.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e8eb081234.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="post-container">
         <div class="post-card-header">
-            <i class="far fa-user-circle fa-lg"></i>
             <div class="post-card-header-logo">
-                <img src="/src/assets/images/jet-removebg.webp" alt="imageLogo" />
-                <h1><a href="/" title="Main Logo">Travel Planner</a></h1>
-                <img src="/src/assets/images/jet-removebg.webp" alt="imageLogo" />
+                <i class="fas fa-fighter-jet"></i>
+                <h1>
+                    <a href="/" title="Main Logo">
+                        Travel Planner
+                    </a>
+                </h1>
+                <i class="fas fa-fighter-jet"></i>
             </div>
             <nav class="post-card-header-navigation">
                 <p><a class="subscribe" href="#" title="Subscribe">Subscribe</a></p>
@@ -37,8 +37,31 @@
             </nav>
         </div>
 
+        <div class="weather-form">
+            <form>
+                <div class="weather-label">
+                    <label for="currentLocation"><i class="fa-solid fa-house-user"></i> From:</label>
+                    <input type="text" id="currentLocation" name="currentLocation" required>
+                </div>
+                <div class="weather-label">
+                    <label for="travelLocation"><i class="fa-solid fa-globe"></i> To:</label>
+                    <input type="text" id="travelLocation" name="travelLocation" required>
+                </div>
+                <div class="weather-label">
+                    <label for="depart"><i class="fa-solid fa-plane-departure"></i> Depart:</label>
+                    <input type="date" id="depart" name="depart" required>
+                </div>
+                <div class="weather-label">
+                    <label for="return"><i class="fa-solid fa-plane-arrival"></i> Return:</label>
+                    <input type="date" id="return" name="return" required>
+                </div>
+                <div class="weather-button">
+                    <button type="submit" class="submit-button"><i class="far fa-hand-point-right"></i> Check Trip</button>
+                </div>
+            </form>
+        </div>
+
         <main class="post-card-main">
-            <h2 class="category-header">Camping</h2>
             <div class="post-card-nestedGrid">
                 <section class="post-card-container-section">
                     <div class="post-card-container">
@@ -75,7 +98,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="post-card-container-section">
+                <!-- <section class="post-card-container-section">
                     <div class="post-card-container">
                         <p class="post-card-badge">
                             <i class="fas fa-ellipsis-v fa-lg"></i>
@@ -108,8 +131,8 @@
                             <i class="fas fa-chevron-down fa-lg"></i>
                         </div>
                     </div>
-                </section>
-                <section class="post-card-container-section">
+                </section> -->
+                <!-- <section class="post-card-container-section">
                     <div class="post-card-container">
                         <p class="post-card-badge">
                             <i class="fas fa-ellipsis-v fa-lg"></i>
@@ -142,8 +165,8 @@
                             <i class="fas fa-chevron-down fa-lg"></i>
                         </div>
                     </div>
-                </section>
-                <section class="post-card-container-section">
+                </section> -->
+                <!-- <section class="post-card-container-section">
                     <div class="post-card-container">
                         <p class="post-card-badge">
                             <i class="fas fa-ellipsis-v fa-lg"></i>
@@ -176,8 +199,8 @@
                             <i class="fas fa-chevron-down fa-lg"></i>
                         </div>
                     </div>
-                </section>
-                <section class="post-card-container-section">
+                </section> -->
+                <!-- <section class="post-card-container-section">
                     <div class="post-card-container">
                         <p class="post-card-badge">
                             <i class="fas fa-ellipsis-v fa-lg"></i>
@@ -244,13 +267,13 @@
                             <i class="fas fa-chevron-down fa-lg"></i>
                         </div>
                     </div>
-                </section>
+                </section> -->
             </div>
-            <section class="load-more-button-section">
+            <!-- <section class="load-more-button-section">
                 <div class="load-more-button" data-js-load-more>
                     <button><i class="fas fa-spinner fa-spin"></i> Load More</button>
                 </div>
-            </section>
+            </section> -->
         </main>
 
         <footer class="post-card-footer">

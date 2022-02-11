@@ -1,0 +1,71 @@
+form {
+    font-family: 'Metal', cursive, sans-serif;
+    display: grid;
+    justify-items: center;
+
+    .weather-button {
+        display: flex;
+        margin: 1vh;
+        align-self: center;
+        justify-self: center;
+        font-weight: bold;
+    }
+
+    .submit-button {
+        font-weight: bold;
+        font-size: 2vh;
+        text-shadow: 0 0 4px rgb(203, 248, 246),
+        0 0 4px rgb(203, 248, 246),
+        0 0 4px rgb(203, 248, 246),
+        0 0 4px rgb(203, 248, 246);
+        background-color: aqua;
+        border: 0;
+        font-family: 'Metal', cursive, sans-serif;
+        border-radius: 10%;
+    }
+
+    .submit-button:active {
+        background-color: #00ffff;
+        box-shadow: 0 4px 8px 0 rgb(233, 254, 255);
+        transform: translateY(2px);
+        transition: 0.2s;
+      }
+
+    .weather-label {
+        margin: 1vh;
+        font-weight: bold;
+        text-shadow: 0 0 5px rgb(2, 224, 213),
+        0 0 5px rgb(2, 224, 213),
+        0 0 5px rgb(2, 224, 213),
+        0 0 5px rgb(2, 224, 213);
+        font-size: 2.5vh;
+        color: whitesmoke;
+    }
+
+    input {
+        box-shadow: 0 4px 8px 0 rgb(42, 248, 255);
+        border: 0;
+    }
+}
+
+@media(min-width:900px) {
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5%;
+
+        .weather-label {
+            display: flex;
+            flex-direction: column;
+            margin: 1vh;
+        }
+
+        .weather-button {
+            display: flex;
+            margin: 1vh;
+            align-self: end;
+            justify-self: center;
+        }
+    }
+}

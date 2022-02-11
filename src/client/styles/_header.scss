@@ -74,35 +74,47 @@
     font-family: 'Mochiy Pop P One', sans-serif;
     font-size: 2.2vw;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    // background-image: url(../../assets/images/drakkar.webp);
-    background-repeat: no-repeat;
-    background-position: center;
-    text-shadow: 0 0 10px rgb(2, 224, 213),
-        0 0 10px rgb(2, 224, 213),
-        0 0 10px rgb(2, 224, 213),
-        0 0 10px rgb(2, 224, 213);
+    text-shadow: 0 0 5px rgb(2, 224, 213),
+        0 0 5px rgb(2, 224, 213),
+        0 0 5px rgb(2, 224, 213),
+        0 0 5px rgb(2, 224, 213);
+    margin: 1vw;
+
+    & h1 {
+        font-size: 2em;
+        font-weight: bold;
+    }
 }
 
 .post-card-header-logo a {
     text-decoration: none;
     color: black;
     cursor: pointer;
+    transition: 0.5s;
 }
 
-.post-card-header-logo img {
-    max-width: 5%;
-    height: auto;
-}
+// .post-card-header-logo img {
+//     max-width: 5%;
+//     height: auto;
+// }
 
 .post-card-header i {
-    position: absolute;
-    left: 95%;
-    top: 2%;
-    font-size: 3vw;
+    text-shadow: 0 0 2px rgb(2, 224, 213),
+        0 0 2px rgb(2, 224, 213),
+        0 0 2px rgb(2, 224, 213),
+        0 0 2px rgb(2, 224, 213);
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.5s;
+}
+
+.post-card-header i:hover {
+    text-shadow: 0 0 5px rgb(2, 224, 213),
+        0 0 5px rgb(2, 224, 213),
+        0 0 5px rgb(2, 224, 213),
+        0 0 5px rgb(2, 224, 213);
+        transition: 0.1s;
 }
 
 .post-card-header i:active {
@@ -117,5 +129,11 @@
 @media(min-width:900px) {
     .post-card-header-navigation {
         font-size: 1.8vw;
+    }
+    .post-card-header-logo {
+        & h1 {
+            font-size: 2.2vw;
+            font-weight: bold;
+        }
     }
 }
