@@ -46,9 +46,6 @@ app.get('/pixabayKey', function (req, res) {
     res.send(API_KEYS.pixabay_api_key);
 });
 
-app.get('/getGeoNamesData', (req, res) => {
-    res.send(geoNamesData);
-});
 app.get('/getWeatherbitData', (req, res) => {
     res.send(weatherbitData);
 });

@@ -1,108 +1,114 @@
-// Open Weather API example
-// api.openweathermap.org/data/2.5/weather?zip={zip code},{country code}&appid={API key}
-// https://openweathermap.org/current
+/* eslint-disable no-undef */
 
-/* Global Variables */
-// OpenWeather API key
-const APIKey = '830acfcd949b7f3dbfcaa08c4baccb1d';
-const BaseUrl = 'https://api.openweathermap.org/data/2.5/weather?zip=';
+import Spin from './helpers/spinner';
+import { htmlHelper } from './helpers/htmlHelper';
 
-// With the parameter 'fuzzy' the GeoNames search will find results even if the search terms are incorrectly spelled
-const GeoNamesBaseUrl1 = `http://api.geonames.org/searchJSON?q=`;
-const GeoNamesBaseUrl2 = `&fuzzy=0.8&maxRows=1&username=vortex84`;
+const spinner = new Spin();
 
-const submitButton = document.querySelector('#generate');
-const zip = document.querySelector('#zip');
-const feelings = document.querySelector('#feelings');
-const dateUI = document.querySelector('#date');
-const temperatureUI = document.querySelector('#temp');
-const contentUI = document.querySelector('#content');
+const travelForm = document.querySelector('.weather-form-data');
+const nestedGrid = document.querySelector('.post-card-nestedGrid');
 
-const getUserInputInfo = () => {
-    return {
-        'zip': zip.value,
-        'feelings': feelings.value,
-    };
+/**
+* Enable datepicker only for the present and future dates
+* @description DatePicker disabler
+* @returns {Void}
+*/
+const handleDatePicker = () => {
+    // eslint-disable-next-line prefer-destructuring
+    const today = new Date().toISOString().split('T')[0];
+    document.querySelector('#depart').setAttribute('min', today);
+    document.querySelector('#return').setAttribute('min', today);
 };
 
-const getWeatherInfo = async () => {
-    const defaultZip = '85001';
-    const { zip } = getUserInputInfo();
-    const requestZIP = zip || defaultZip;
-    const requestUrl = `${BaseUrl}${requestZIP}&units=metric&appid=${APIKey}`;
-    const response = await fetch(requestUrl);
-    try {
-        const responseData = await response.json();
-        console.log(responseData);
-        return responseData;
-    } catch (error) {
-        console.log(error);
-    }
-};
-
-const saveProjectData = async (url, userData) => {
-    const response = await fetch(url, {
-        method: 'POST',
-        credentials: 'same-origin',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(userData)
-    });
-    try {
-        const responseData = await response.text();
-        console.log(responseData);
-    } catch (error) {
-        console.log(error);
-    }
-};
-
-const getProjectData = async (url) => {
-    const response = await fetch(url, {
-        method: 'GET',
-        credentials: 'same-origin',
-        headers: {
-            'Content-Type': 'application/json'
+const addHeartSaveButtonHandler = () => {
+    let heartButton = document.querySelector('.far.fa-heart') || document.querySelector('.fa-solid.fa-heart');
+    heartButton.addEventListener('click', () => {
+        if (heartButton.classList.contains('fa-solid')) {
+            heartButton.outerHTML = `<i class="far fa-heart fa-lg"></i>`;
+            addHeartSaveButtonHandler();
+        } else {
+            heartButton.outerHTML = `<i class="fa-solid fa-heart fa-lg"></i>`;
+            addHeartSaveButtonHandler();
         }
-    });
-    try {
-        const responseData = await response.json();
-        updateUI(responseData);
-    } catch (error) {
-        console.log(error);
-    }
+    }, { once: true });
 };
 
-const updateUI = (dataUI) => {
-    const { temperature, date, userResponse } = dataUI;
-    dateUI.innerHTML = `Date is ${date}` || '';
-    temperatureUI.innerHTML = `Temperature is ${temperature} &#8451` || '';
-    contentUI.innerHTML = userResponse ? `Users mood is => ${userResponse}` : '';
+const createCard = (geoNamesData, weatherBitData, pixabayData, timeDiffDays) => {
+    const { locationName } = geoNamesData;
+    // eslint-disable-next-line prefer-destructuring
+    const today = new Date().toISOString().split('T')[0];
 
-    // Clear input fields
-    zip.value = '';
-    feelings.value = '';
+    const fragment = new DocumentFragment();
+    const section = document.createElement('section');
+    section.classList.add('post-card-container-section');
+    fragment.appendChild(section);
+    const div1 = document.createElement('div');
+    div1.classList.add('post-card-container');
+    section.appendChild(div1);
+    const p1 = document.createElement('p');
+    p1.classList.add('post-card-badge');
+    p1.innerHTML = `<b>My Trip</b> <i class="fa-solid fa-suitcase"></i>`;
+    div1.appendChild(p1);
+    const h3 = document.createElement('h3');
+    h3.innerHTML = `<i class="fa-solid fa-earth-europe"></i> <b>${locationName}</b>`;
+    div1.appendChild(h3);
+    const p2 = document.createElement('p');
+    p2.innerHTML = `<i class="fa-solid fa-ruler"></i> Length of the trip - <b>${timeDiffDays}</b> ${timeDiffDays > 1 ? '<b>days</b>' : '<b>day</b>'}`;
+    div1.appendChild(p2);
+    const p3 = document.createElement('p');
+    p3.innerHTML = `<i>${today}</i>`;
+    div1.appendChild(p3);
+    const figure = document.createElement('figure');
+    figure.innerHTML = `<img src="${pixabayData.largeImageURL}" alt=${locationName}">
+    <figcaption>${locationName} Photo</figcaption>`;
+    div1.appendChild(figure);
+    const div2 = document.createElement('div');
+    div2.classList.add('post-card-link-section');
+    div2.innerHTML = htmlHelper(weatherBitData);
+    div1.appendChild(div2);
+    const div3 = document.createElement('div');
+    div3.classList.add('post-card-social-icons');
+    div3.innerHTML = `<i class="far fa-heart fa-lg"></i> `;
+    div1.appendChild(div3);
+
+    nestedGrid.appendChild(fragment);
+
+    addHeartSaveButtonHandler();
 };
 
+/**
+* Handle trael form submit
+* @description handle form submitter
+* @param {Object} event - DOM event
+* @returns {Void}
+*/
+const handleSubmit = async (event) => {
+    event.preventDefault();
 
+    spinner.target = document.body;
+    spinner.start();
 
-const updateWeatherJournalApp = async () => {
-    getWeatherInfo()
-        .then((data) => {
-            const { main } = data || {};
-            const { temp: temperature } = main || {};
-            const { feelings: userResponse } = getUserInputInfo();
-            // Create a new date instance dynamically with JS
-            let date = new Date();
-            date = `${(date.getMonth() + 1)}/${date.getDate()}/${date.getFullYear()}`;
-            saveProjectData('http://localhost:3000/saveProjectData', { temperature, date, userResponse })
-                .then(() => {
-                    getProjectData('http://localhost:3000/getProjectData');
-                });
-        });
+    const travelFormData = new FormData(travelForm);
+    const travelLocation = travelFormData.get('travelLocation');
+    const departDate = new Date(travelFormData.get('depart'));
+    const returnDate = new Date(travelFormData.get('return'));
+    const timeDiffDays = (returnDate.getTime() - departDate.getTime()) / (1000 * 3600 * 24);
+
+    const geoNamesData = await Client.getGeoNamesData(travelLocation);
+    const weatherBitData = await Client.getWeatherbitData(geoNamesData, timeDiffDays);
+    const pixabayData = await Client.getPixabayData(travelLocation);
+
+    createCard(geoNamesData, weatherBitData, pixabayData, timeDiffDays);
+
+    spinner.stop();
+    travelForm.reset();
 };
 
+document.addEventListener('DOMContentLoaded', () => {
+    travelForm.addEventListener('submit', handleSubmit);
 
-submitButton.addEventListener('click', updateWeatherJournalApp);
+    handleDatePicker();
+});
 
+export { handleSubmit };
 

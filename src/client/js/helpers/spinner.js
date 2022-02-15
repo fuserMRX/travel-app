@@ -13,7 +13,7 @@ export default class Spin {
             rotate: 0, // The rotation offset
             animation: 'spinner-line-shrink', // The CSS animation name for the lines
             direction: 1, // 1: clockwise, -1: counterclockwise
-            color: '#f39ef5', // CSS color or array of colors
+            color: 'rgb(42, 248, 255)', // CSS color or array of colors
             fadeColor: 'transparent', // CSS color or array of colors
             top: '50%', // Top position relative to parent
             left: '50%', // Left position relative to parent

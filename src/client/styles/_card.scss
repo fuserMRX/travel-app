@@ -71,7 +71,14 @@
 
 .post-card-container i:hover {
     transform: scale(1.5);
-    color: rgb(224, 135, 2);
+    color: rgb(42, 248, 255);
+}
+
+.post-card-container .far.fa-heart:active,
+.post-card-container .fa-solid.fa-heart:active {
+    color: rgb(42, 248, 255);
+    transform: translateY(2px);
+    transition: 0.2s;
 }
 
 .post-card-container .post-card-badge {
@@ -90,7 +97,7 @@
 }
 
 .post-card-container a:hover {
-    color: rgb(207, 126, 3);
+    color: rgb(42, 248, 255);
     text-decoration: underline;
 }
 
@@ -98,44 +105,13 @@
     position: relative;
 }
 
-.post-quote {
-    visibility: hidden;
-    width: 240px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    top: 100%;
-    left: 50%;
-    margin-left: -120px;
-    line-height: 1em;
-}
-
-.post-quote::after {
-    content: "";
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent transparent black transparent;
-}
-
-.post-card-container a:hover+.post-quote {
-    visibility: visible;
-}
-
 .post-card-social-icons {
     display: flex;
     flex-direction: row;
     /* solution to override one flex inside another */
     width: 100%;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
 }
 
 .post-card-social-icons i {

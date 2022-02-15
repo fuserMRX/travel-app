@@ -21,7 +21,8 @@
                 </h1>
                 <i class="fas fa-fighter-jet"></i>
             </div>
-            <nav class="post-card-header-navigation">
+            <!-- TODO -  re-check -->
+            <!-- <nav class="post-card-header-navigation">
                 <p><a class="subscribe" href="#" title="Subscribe">Subscribe</a></p>
                 <p>Gear</p>
                 <p>Camping</p>
@@ -34,11 +35,11 @@
                         <img src="/src/assets/images/magniGlass.webp">
                     </button>
                 </form>
-            </nav>
+            </nav> -->
         </div>
 
         <div class="weather-form">
-            <form>
+            <form class="weather-form-data">
                 <div class="weather-label">
                     <label for="currentLocation"><i class="fa-solid fa-house-user"></i> From:</label>
                     <input type="text" id="currentLocation" name="currentLocation" required>
@@ -62,218 +63,7 @@
         </div>
 
         <main class="post-card-main">
-            <div class="post-card-nestedGrid">
-                <section class="post-card-container-section">
-                    <div class="post-card-container">
-                        <p class="post-card-badge">
-                            <i class="fas fa-ellipsis-v fa-lg"></i>
-                        </p>
-                        <h3>
-                            <a href="https://www.wacken.com/en/" target="_blank" rel="noopener noreferrer">
-                                <i class="far fa-hand-point-right"></i></i> <b>Wacken Open Air</b>
-                            </a>
-                            (<i>Germany</i>)
-                        </h3>
-                        <p><i>July 31, 2021</i>
-                        </p>
-                        <figure>
-                            <img src="/src/assets/images/wacken_fest.webp" alt="Wacken Camping">
-                            <figcaption>Wacken Fest Camping</figcaption>
-                        </figure>
-                        <div class="post-card-link-section">
-                            <a href="/src/htmlComponents/postcard.html">
-                                <i class="fas fa-link"></i>
-                                Continue Reading
-                                <i class="fas fa-link"></i>
-                            </a>
-                            <div class="post-quote">
-                                <p><i class="fas fa-arrow-circle-up"></i></p>
-                                <q>click on the link above to find out more about this festival camping</q>
-                            </div>
-                        </div>
-                        <div class="post-card-social-icons">
-                            <i class="fas fa-share-alt fa-lg"></i>
-                            <i class="far fa-heart fa-lg"></i>
-                            <i class="fas fa-chevron-down fa-lg"></i>
-                        </div>
-                    </div>
-                </section>
-                <!-- <section class="post-card-container-section">
-                    <div class="post-card-container">
-                        <p class="post-card-badge">
-                            <i class="fas fa-ellipsis-v fa-lg"></i>
-                        </p>
-                        <h3>
-                            <a href="https://downloadfestival.co.uk/" target="_blank" rel="noopener noreferrer">
-                                <i class="far fa-hand-point-right"></i></i> <b>Download Rock Fest</b>
-                            </a>
-                            (<i>England</i>)
-                        </h3>
-                        <p><i>June 12, 2022</i></p>
-                        <figure>
-                            <img src="/src/assets/images/download_fest.webp" alt="Download Camping">
-                            <figcaption>Download Fest Camping</figcaption>
-                        </figure>
-                        <div class="post-card-link-section">
-                            <a href="/src/htmlComponents/postcard.html">
-                                <i class="fas fa-link"></i>
-                                Continue Reading
-                                <i class="fas fa-link"></i>
-                            </a>
-                            <div class="post-quote">
-                                <p><i class="fas fa-arrow-circle-up"></i></p>
-                                <q>click on the link above to find out more about this festival camping</q>
-                            </div>
-                        </div>
-                        <div class="post-card-social-icons">
-                            <i class="fas fa-share-alt fa-lg"></i>
-                            <i class="far fa-heart fa-lg"></i>
-                            <i class="fas fa-chevron-down fa-lg"></i>
-                        </div>
-                    </div>
-                </section> -->
-                <!-- <section class="post-card-container-section">
-                    <div class="post-card-container">
-                        <p class="post-card-badge">
-                            <i class="fas fa-ellipsis-v fa-lg"></i>
-                        </p>
-                        <h3>
-                            <a href="https://www.hellfest.fr/" target="_blank" rel="noopener noreferrer">
-                                <i class="far fa-hand-point-right"></i></i> <b>HellFest Open Air</b>
-                            </a>
-                            (<i>France</i>)
-                        </h3>
-                        <p><i>June 19, 2022</i></p>
-                        <figure>
-                            <img src="/src/assets/images/hellfest_fest.webp" alt="HellFest Camping">
-                            <figcaption>HellFest Camping</figcaption>
-                        </figure>
-                        <div class="post-card-link-section">
-                            <a href="/src/htmlComponents/postcard.html">
-                                <i class="fas fa-link"></i>
-                                Continue Reading
-                                <i class="fas fa-link"></i>
-                            </a>
-                            <div class="post-quote">
-                                <p><i class="fas fa-arrow-circle-up"></i></p>
-                                <q>click on the link above to find out more about this festival camping</q>
-                            </div>
-                        </div>
-                        <div class="post-card-social-icons">
-                            <i class="fas fa-share-alt fa-lg"></i>
-                            <i class="far fa-heart fa-lg"></i>
-                            <i class="fas fa-chevron-down fa-lg"></i>
-                        </div>
-                    </div>
-                </section> -->
-                <!-- <section class="post-card-container-section">
-                    <div class="post-card-container">
-                        <p class="post-card-badge">
-                            <i class="fas fa-ellipsis-v fa-lg"></i>
-                        </p>
-                        <h3>
-                            <a href="https://zaxidfest.com/" target="_blank" rel="noopener noreferrer">
-                                <i class="far fa-hand-point-right"></i></i> <b>ZaxidFest Open Air</b>
-                            </a>
-                            (<i>Ukraine</i>)
-                        </h3>
-                        <p><i>June 28, 2022</i></p>
-                        <figure>
-                            <img src="/src/assets/images/zaxidfest_fest.webp" alt="ZaxidFest Camping">
-                            <figcaption>ZaxidFest Camping</figcaption>
-                        </figure>
-                        <div class="post-card-link-section">
-                            <a href="/src/htmlComponents/postcard.html">
-                                <i class="fas fa-link"></i>
-                                Continue Reading
-                                <i class="fas fa-link"></i>
-                            </a>
-                            <div class="post-quote">
-                                <p><i class="fas fa-arrow-circle-up"></i></p>
-                                <q>click on the link above to find out more about this festival camping</q>
-                            </div>
-                        </div>
-                        <div class="post-card-social-icons">
-                            <i class="fas fa-share-alt fa-lg"></i>
-                            <i class="far fa-heart fa-lg"></i>
-                            <i class="fas fa-chevron-down fa-lg"></i>
-                        </div>
-                    </div>
-                </section> -->
-                <!-- <section class="post-card-container-section">
-                    <div class="post-card-container">
-                        <p class="post-card-badge">
-                            <i class="fas fa-ellipsis-v fa-lg"></i>
-                        </p>
-                        <h3>
-                            <a href="https://www.graspop.be/en/" target="_blank" rel="noopener noreferrer">
-                                <i class="far fa-hand-point-right"></i></i> <b>Graspop Open Air</b>
-                            </a>
-                            (<i>Belgium</i>)
-                        </h3>
-                        <p><i>June 16, 2022</i></p>
-                        <figure>
-                            <img src="/src/assets/images/graspop_fest.webp" alt="Graspop Camping">
-                            <figcaption>Graspop Camping</figcaption>
-                        </figure>
-                        <div class="post-card-link-section">
-                            <a href="/src/htmlComponents/postcard.html">
-                                <i class="fas fa-link"></i>
-                                Continue Reading
-                                <i class="fas fa-link"></i>
-                            </a>
-                            <div class="post-quote">
-                                <p><i class="fas fa-arrow-circle-up"></i></p>
-                                <q>click on the link above to find out more about this festival camping</q>
-                            </div>
-                        </div>
-                        <div class="post-card-social-icons">
-                            <i class="fas fa-share-alt fa-lg"></i>
-                            <i class="far fa-heart fa-lg"></i>
-                            <i class="fas fa-chevron-down fa-lg"></i>
-                        </div>
-                    </div>
-                </section>
-                <section class="post-card-container-section">
-                    <div class="post-card-container">
-                        <p class="post-card-badge">
-                            <i class="fas fa-ellipsis-v fa-lg"></i>
-                        </p>
-                        <h3>
-                            <a href="https://www.resurrectionfest.es/?lang=en" target="_blank" rel="noopener noreferrer">
-                                <i class="far fa-hand-point-right"></i></i> <b>Resurrection Fest</b>
-                            </a>
-                            (<i>Spain</i>)
-                        </h3>
-                        <p><i>July 2, 2022</i></p>
-                        <figure>
-                            <img src="/src/assets/images/resurrection_fest.webp" alt="Resurrection Camping">
-                            <figcaption>Resurrection Camping</figcaption>
-                        </figure>
-                        <div class="post-card-link-section">
-                            <a href="/src/htmlComponents/postcard.html">
-                                <i class="fas fa-link"></i>
-                                Continue Reading
-                                <i class="fas fa-link"></i>
-                            </a>
-                            <div class="post-quote">
-                                <p><i class="fas fa-arrow-circle-up"></i></p>
-                                <q>click on the link above to find out more about this festival camping</q>
-                            </div>
-                        </div>
-                        <div class="post-card-social-icons">
-                            <i class="fas fa-share-alt fa-lg"></i>
-                            <i class="far fa-heart fa-lg"></i>
-                            <i class="fas fa-chevron-down fa-lg"></i>
-                        </div>
-                    </div>
-                </section> -->
-            </div>
-            <!-- <section class="load-more-button-section">
-                <div class="load-more-button" data-js-load-more>
-                    <button><i class="fas fa-spinner fa-spin"></i> Load More</button>
-                </div>
-            </section> -->
+            <div class="post-card-nestedGrid"></div>
         </main>
 
         <footer class="post-card-footer">
@@ -283,20 +73,17 @@
             </div>
             <hr />
             <div class="menu">
-                <a href="#/">
-                    <i class="fas fa-file-signature fa-lg"></i> <b>Subscribe</b>
+                <a href="https://www.booking.com/" target="_blank">
+                    <i class="fa-solid fa-hotel"></i> Hotels Booking
                 </a>
-                <a href="#/">
-                    <i class="fas fa-tshirt fa-lg"></i> Gear
+                <a href="https://www.booking.com/campings/index.html" target="_blank">
+                    <i class="fas fa-campground fa-lg"></i> Camping Booking
                 </a>
-                <a href="#/">
-                    <i class="fas fa-campground fa-lg"></i> Camping
+                <a href="https://www.booking.com/cars/index.html" target="_blank">
+                    <i class="fa-solid fa-taxi"></i> Car Rental
                 </a>
-                <a href="#/">
-                    <i class="fas fa-road fa-lg"></i> Road
-                </a>
-                <a href="#/">
-                    <i class="fas fa-ticket-alt fa-lg"></i> Tickets Info
+                <a href="https://www.booking.com/flights/index.uk.htm" target="_blank">
+                    <i class="fa-solid fa-plane"></i> Flights booking
                 </a>
             </div>
             <hr />
