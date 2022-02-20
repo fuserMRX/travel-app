@@ -21,32 +21,17 @@
                 </h1>
                 <i class="fas fa-fighter-jet"></i>
             </div>
-            <!-- TODO -  re-check -->
-            <!-- <nav class="post-card-header-navigation">
-                <p><a class="subscribe" href="#" title="Subscribe">Subscribe</a></p>
-                <p>Gear</p>
-                <p>Camping</p>
-                <p>Road</p>
-                <p>Tickets Info</p>
-                <form action="/search" method="POST" class="form"
-                    onsubmit="event.preventDefault(); event.target.reset();">
-                    <input type="search" placeholder="Search" class="search-field" />
-                    <button type="submit" class="search-button">
-                        <img src="/src/assets/images/magniGlass.webp">
-                    </button>
-                </form>
-            </nav> -->
         </div>
 
         <div class="weather-form">
             <form class="weather-form-data">
                 <div class="weather-label">
                     <label for="currentLocation"><i class="fa-solid fa-house-user"></i> From:</label>
-                    <input type="text" id="currentLocation" name="currentLocation" required>
+                    <input type="text" id="currentLocation" name="currentLocation" maxlength="20" required>
                 </div>
                 <div class="weather-label">
                     <label for="travelLocation"><i class="fa-solid fa-globe"></i> To:</label>
-                    <input type="text" id="travelLocation" name="travelLocation" required>
+                    <input type="text" id="travelLocation" name="travelLocation" maxlength="20" required>
                 </div>
                 <div class="weather-label">
                     <label for="depart"><i class="fa-solid fa-plane-departure"></i> Depart:</label>

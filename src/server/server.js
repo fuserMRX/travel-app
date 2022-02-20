@@ -7,10 +7,6 @@ dotenv.config();
 
 const PORT = 3000;
 
-const geoNamesData = {};
-const weatherbitData = {};
-const pixabayData = {};
-
 const API_KEYS = {
     weatherbit_api_key: process.env.WEATHERBIT_API_KEY,
     pixabay_api_key: process.env.PIXABAY_API_KEY,
@@ -44,39 +40,4 @@ app.get('/weatherbitKey', function (req, res) {
 
 app.get('/pixabayKey', function (req, res) {
     res.send(API_KEYS.pixabay_api_key);
-});
-
-app.get('/getWeatherbitData', (req, res) => {
-    res.send(weatherbitData);
-});
-app.get('/getPixabayData', (req, res) => {
-    res.send(pixabayData);
-});
-
-app.post('/saveGeoNamesData', (req, res) => {
-    const { temperature, date, userResponse } = req.body;
-    // projectData = {
-    //     temperature,
-    //     date,
-    //     userResponse
-    // };
-    res.send('GeoNamesData has been successfully added');
-});
-app.post('/saveWeatherbitData', (req, res) => {
-    const { temperature, date, userResponse } = req.body;
-    // projectData = {
-    //     temperature,
-    //     date,
-    //     userResponse
-    // };
-    res.send('WeatherbitData has been successfully added');
-});
-app.post('/savePixabayData', (req, res) => {
-    const { temperature, date, userResponse } = req.body;
-    // projectData = {
-    //     temperature,
-    //     date,
-    //     userResponse
-    // };
-    res.send('PixabayData has been successfully added');
 });

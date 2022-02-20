@@ -3,7 +3,6 @@ const htmlHelper = (paramObj) => {
     if (Object.keys(paramObj).length) {
         finalString += '<ul>';
         for (const key of Object.keys(paramObj)) {
-            console.log(key, paramObj[key]);
             if (key === 'Length of the trip' && paramObj[key] !== undefined && paramObj[key] !== null) {
                 finalString += `<li><i class="fa-solid fa-ruler"></i> ${key} - <strong>${paramObj[key]}</strong></li>`;
             }

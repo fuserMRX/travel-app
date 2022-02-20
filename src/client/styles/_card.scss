@@ -74,6 +74,7 @@
     color: rgb(42, 248, 255);
 }
 
+.post-card-container .fa-trash-can:active,
 .post-card-container .far.fa-heart:active,
 .post-card-container .fa-solid.fa-heart:active {
     color: rgb(42, 248, 255);
@@ -111,7 +112,11 @@
     /* solution to override one flex inside another */
     width: 100%;
     justify-content: left;
-    align-items: left;
+    align-items: center;
+}
+
+.fa-trash-can {
+    margin-left: auto;
 }
 
 .post-card-social-icons i {
