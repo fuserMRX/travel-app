@@ -186,7 +186,7 @@ const handleSubmit = async (event) => {
     const travelLocation = travelFormData.get('travelLocation').toLowerCase();
     const departDate = new Date(travelFormData.get('depart'));
     const returnDate = new Date(travelFormData.get('return'));
-    const timeDiffDays = (returnDate.getTime() - departDate.getTime()) / (1000 * 3600 * 24) || 1;
+    const timeDiffDays = Math.abs((returnDate.getTime() - departDate.getTime()) / (1000 * 3600 * 24)) || 1;
 
     const geoNamesData = await Client.getGeoNamesData(travelLocation);
     const weatherBitData = await Client.getWeatherbitData(geoNamesData, timeDiffDays);
