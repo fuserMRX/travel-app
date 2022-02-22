@@ -14,12 +14,17 @@ const getImage = async (application_key, travelLocation) => {
 
 const getPixabayData = async (travelLocation) => {
     if (travelLocation) {
-        // Get API key
-        const application_key = await getApiKey(PixabayKeyURL);
+        let largeImageURL = '';
+        try {
+            // Get API key
+            const application_key = await getApiKey(PixabayKeyURL);
 
-        let largeImageURL = await getImage(application_key, travelLocation);
-        if (largeImageURL === undefined) {
-            largeImageURL = await getImage(application_key, 'placeholder');
+            largeImageURL = await getImage(application_key, travelLocation);
+            if (largeImageURL === undefined) {
+                largeImageURL = await getImage(application_key, 'placeholder');
+            }
+        } catch (e) {
+            console.log(e);
         }
         return { largeImageURL };
     }

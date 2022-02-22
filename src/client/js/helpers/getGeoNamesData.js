@@ -10,14 +10,19 @@ const GeoNamesBaseUrl2 = `&fuzzy=0.8&maxRows=1&username=vortex84`;
 */
 const getGeoNamesData = async (travelLocation) => {
     const url = `${GeoNamesBaseUrl1}${encodeURIComponent(travelLocation)}${GeoNamesBaseUrl2}`;
-    const response = await fetch(url);
-    const geoNamesData = await response.json();
-    const { geonames } = geoNamesData;
-    // eslint-disable-next-line prefer-destructuring
-    const { lat, lng, name, countryName } = geonames.length && geonames[0] || {};
-    return {
-        lat, lng, locationName: name, countryName
-    };
+    try {
+        const response = await fetch(url);
+        const geoNamesData = await response.json();
+        const { geonames } = geoNamesData;
+        // eslint-disable-next-line prefer-destructuring
+        const { lat, lng, name, countryName } = geonames.length && geonames[0] || {};
+        return {
+            lat, lng, locationName: name, countryName
+        };
+    } catch (e) {
+        console.log(e);
+        return {};
+    }
 };
 
 export { getGeoNamesData };

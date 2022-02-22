@@ -15,19 +15,27 @@ const getWeatherbitData = async (geoNamesData, timeDiffDays) => {
     const { lat, lng } = geoNamesData;
     if (lat && lng) {
         let url = '';
-        // Get API key
-        const application_key = await getApiKey(WeatherbitKeyURL);
+        let application_key = '';
+        let parsedWeatherInfo = {};
+        try {
+            // Get API key
+            application_key = await getApiKey(WeatherbitKeyURL);
 
-        if (timeDiffDays > 7) {
-            url = `${WeatherbitForecastUrl}lat=${lat}&lon=${lng}&days=${timeDiffDays}&key=${application_key}`;
-        } else {
-            url = `${WeatherbitCurrentUrl}lat=${lat}&lon=${lng}&key=${application_key}`;
+
+            if (timeDiffDays > 7) {
+                url = `${WeatherbitForecastUrl}lat=${lat}&lon=${lng}&days=${timeDiffDays}&key=${application_key}`;
+            } else {
+                url = `${WeatherbitCurrentUrl}lat=${lat}&lon=${lng}&key=${application_key}`;
+            }
+
+            const weatherInfoData = await fetch(url);
+            parsedWeatherInfo = await weatherInfoData.json();
+        } catch (e) {
+            console.log(e);
         }
 
-        const weatherInfoData = await fetch(url);
-        const parsedWeatherInfo = await weatherInfoData.json();
         const { data } = parsedWeatherInfo;
-        const { app_temp, temp, clouds, slp, snow, weather } = data.length && data[0] || {};
+        const { app_temp, temp, clouds, slp, snow, weather } = data && data.length && data[0] || {};
         return {
             'Feels like temperature': app_temp,
             'Current temperature': temp,
