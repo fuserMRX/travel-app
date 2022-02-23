@@ -27,13 +27,14 @@
 
 ***
 
-### Please note
+### Please note:
 
 >***.env*** file should be added with the corresponding keys below:❗
 >
 >***example with variables used in the project***:
-❕❕❕***WEATHERBIT_API_KEY***=fbe169eec687edd807b8f  ❕❕❕
-❕❕❕***PIXABAY_API_KEY***=876b8e2f7c255979086627❕❕❕
+
+- ❕❕***WEATHERBIT_API_KEY***=fbe169eec687edd807b8f ❕❕❕
+- ❕❕***PIXABAY_API_KEY***=876b8e2f7c255979086627 ❕❕❕
 >
 >keys are ***not real*** but ***the variables*** are
 
