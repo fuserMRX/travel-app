@@ -1,3 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Metal&display=swap');
+@font-face {
+    font-family: "Metal";
+    src: local('Metal'), url('../webfonts/Metal-Regular.ttf') format('truetype');
+    font-style: auto;
+}
+
+@font-face {
+    font-family: "Metal Mania";
+    src: local('Metal Mania'), url('../webfonts/MetalMania-Regular.ttf') format('truetype');
+    font-style: auto;
+}
+
+@font-face {
+    font-family: 'Mochiy Pop P One';
+    src: local('Mochiy Pop P One'), url('../webfonts/MochiyPopPOne-Regular.ttf') format('truetype');
+    font-style: auto;
+}
