@@ -6,15 +6,16 @@ const serviceWorker = (function () {
             console.log('PRODUCTION is ==>', PRODUCTION);
             if (PRODUCTION) {
                 serviceWorkerIsDefined = true;
+                console.log('ServiceWorker is ==>', serviceWorkerIsDefined);
                 // Use the window load event to keep the page load performant
                 window.addEventListener('load', () => {
                     navigator.serviceWorker.register('/service-worker.js');
                 });
+            } else {
+                console.log('ServiceWorker is ==>', serviceWorkerIsDefined);
             }
         }
     });
-    console.log('ServiceWorker is ==>', serviceWorkerIsDefined);
-    return serviceWorkerIsDefined;
 }());
 
 export { serviceWorker };

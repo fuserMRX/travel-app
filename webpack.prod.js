@@ -30,7 +30,7 @@ module.exports = merge(common, {
                 }
             },
             {
-                test: /\.scss$/i,
+                test: /\.s[ac]ss$/i,
                 exclude: /(node_modules)/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
             },

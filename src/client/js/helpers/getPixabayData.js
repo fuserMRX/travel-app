@@ -25,6 +25,10 @@ const getPixabayData = async (travelLocation) => {
             }
         } catch (e) {
             console.log(e);
+            return {
+                error: true,
+                message: `Failed to fetch`
+            };
         }
         return { largeImageURL };
     }

@@ -4,6 +4,8 @@ import { getWeatherbitData } from './js/helpers/getWeatherbitData';
 import { handleSubmit } from './js/app';
 import { serviceWorker } from './js/serviceWorker';
 
+import '@fortawesome/fontawesome-free/js/all';
+
 import './styles/main.scss';
 
 export {

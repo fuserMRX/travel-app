@@ -32,6 +32,10 @@ const getWeatherbitData = async (geoNamesData, timeDiffDays) => {
             parsedWeatherInfo = await weatherInfoData.json();
         } catch (e) {
             console.log(e);
+            return {
+                error: true,
+                message: `Failed to fetch`
+            };
         }
 
         const { data } = parsedWeatherInfo;

@@ -21,7 +21,10 @@ const getGeoNamesData = async (travelLocation) => {
         };
     } catch (e) {
         console.log(e);
-        return {};
+        return {
+            error: true,
+            message: `Failed to fetch`
+        };
     }
 };
 

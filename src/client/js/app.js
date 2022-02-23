@@ -193,6 +193,18 @@ const handleSubmit = async (event) => {
     const pixabayData = await Client.getPixabayData(travelLocation);
     const { locationName, countryName } = geoNamesData;
 
+    const { error: geoNamesDataError, message: geoNamesDataMsg } = geoNamesData;
+    const { error: pixabayDataError, message: pixabayDataMsg } = pixabayData;
+
+    if (geoNamesDataError || pixabayDataError) {
+        alertifyjs.set('notifier', 'position', 'top-right');
+        const error = geoNamesDataMsg || pixabayDataMsg || `Failed to Fetch`;
+        alertifyjs.notify(`<b>${error}</b></br><b>Connection Issues</b> <i class="fa-solid fa-triangle-exclamation"></i>`, 'error', 5);
+        spinner.stop();
+        travelForm.reset();
+        return;
+    }
+
     const travelDataObj = {
         id: travelLocation + currentLocation,
         currentLocation,
