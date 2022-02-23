@@ -36,3 +36,5 @@
 ❕❕❕***PIXABAY_API_KEY***=876b8e2f7c255979086627❕❕❕
 >
 >keys are ***not real*** but ***the variables*** are
+
+`without keys above you won't have a proper behavior`❗❗❗
